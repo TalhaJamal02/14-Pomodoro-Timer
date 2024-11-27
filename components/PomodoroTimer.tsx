@@ -164,7 +164,7 @@ function PomodoroTimer() {
                         <li>5. Take a longer (20-30 min.) break.</li>
                       </ol>
                       <br />
-                      <Link href="https://todoist.com/productivity-methods/pomodoro-technique" target="_blank" rel="noopener noreferrer" className=' underline text-black'>Read more!</Link>
+                      <Link href="https://todoist.com/productivity-methods/pomodoro-technique" target="_blank" rel="noopener noreferrer" className=' underline text-black'>Learn more!</Link>
                     </AlertDialogDescription>
                   </AlertDialogHeader>
                   <AlertDialogFooter>
