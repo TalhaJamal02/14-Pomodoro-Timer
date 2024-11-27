@@ -35,20 +35,22 @@ function PomodoroTimer() {
   const timerRef = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
-    if (state.timerStatus === "running" && state.currentTime > 0) {
+  if (state.timerStatus === "running") {
+    if (state.currentTime > 0) {
       timerRef.current = setInterval(() => {
         setState((prevState) => ({
           ...prevState,
           currentTime: prevState.currentTime - 1,
         }));
-      }, 1000)
-    }
-    else if (state.currentTime === 0) {
-      clearInterval(timerRef.current as NodeJS.Timeout)
+      }, 1000);
+    } else {
+      clearInterval(timerRef.current as NodeJS.Timeout);
       handleSessionSwitch();
     }
-    return () => clearInterval(timerRef.current as NodeJS.Timeout);
-  }, [state.timerStatus, state.currentSession])
+  }
+
+  return () => clearInterval(timerRef.current as NodeJS.Timeout);
+}, [state.timerStatus, state.currentTime]);
 
   const handleSessionSwitch = (): void => {
     setState((prevState) => {
